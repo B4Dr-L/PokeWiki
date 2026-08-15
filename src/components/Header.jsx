@@ -3,7 +3,7 @@ import logoImg from '../assets/logo.png';
 export default function Header({ activeTab, setActiveTab }) {
   return (
     <header className="bg-blue-900 border-b border-blue-800 text-blue-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between gap-4">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-2.5 sm:py-3 flex items-center justify-between gap-2 sm:gap-4">
         {/* Logo */}
         <button 
           type="button"
@@ -13,17 +13,17 @@ export default function Header({ activeTab, setActiveTab }) {
           <img 
             src={logoImg} 
             alt="PokiWiki Logo" 
-            className="h-8 sm:h-9 w-auto object-contain"
+            className="h-7 sm:h-9 w-auto object-contain"
           />
         </button>
 
-        <nav className="flex items-center gap-2 bg-blue-950/50 p-1 rounded-xl border border-blue-800/60">
+        <nav className="flex items-center gap-1 sm:gap-2 bg-blue-950/50 p-0.5 sm:p-1 rounded-lg sm:rounded-xl border border-blue-800/60">
           {/* Pokemons Button */}
           <button
             type="button"
             onClick={() => setActiveTab('PokemonList')}
             className={`
-              flex items-center gap-2 px-4 py-1.5 rounded-lg text-sm font-medium transition-all duration-150 cursor-pointer
+              flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-4 py-1 sm:py-1.5 rounded-md sm:rounded-lg text-xs sm:text-sm font-medium transition-all duration-150 cursor-pointer
               ${
                 activeTab === 'PokemonList'
                   ? 'bg-amber-400 text-blue-950 font-semibold hover:bg-amber-300'
@@ -32,7 +32,7 @@ export default function Header({ activeTab, setActiveTab }) {
             `}
           >
             <svg 
-              className={`w-4 h-4 ${activeTab === 'PokemonList' ? 'text-blue-950' : 'text-blue-200'}`} 
+              className={`w-3.5 h-3.5 sm:w-4 sm:h-4 ${activeTab === 'PokemonList' ? 'text-blue-950' : 'text-blue-200'}`} 
               viewBox="0 0 24 24" 
               fill="none" 
               stroke="currentColor" 
@@ -52,7 +52,7 @@ export default function Header({ activeTab, setActiveTab }) {
             type="button"
             onClick={() => setActiveTab('MyTeamList')}
             className={`
-              flex items-center gap-2 px-4 py-1.5 rounded-lg text-sm font-medium transition-all duration-150 cursor-pointer
+              flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-4 py-1 sm:py-1.5 rounded-md sm:rounded-lg text-xs sm:text-sm font-medium transition-all duration-150 cursor-pointer
               ${
                 activeTab === 'MyTeamList'
                   ? 'bg-amber-400 text-blue-950 font-semibold shadow-xs hover:bg-amber-300'
@@ -61,7 +61,7 @@ export default function Header({ activeTab, setActiveTab }) {
             `}
           >
             <svg 
-              className={`w-4 h-4 ${activeTab === 'MyTeamList' ? 'text-blue-950' : 'text-blue-200'}`} 
+              className={`w-3.5 h-3.5 sm:w-4 sm:h-4 ${activeTab === 'MyTeamList' ? 'text-blue-950' : 'text-blue-200'}`} 
               viewBox="0 0 24 24" 
               fill={activeTab === 'MyTeamList' ? 'currentColor' : 'none'} 
               stroke="currentColor" 
@@ -81,5 +81,3 @@ export default function Header({ activeTab, setActiveTab }) {
     </header>
   );
 }
-
-
