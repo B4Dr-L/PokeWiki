@@ -1,27 +1,27 @@
-import logoImg from '../assets/logo.png';
+import logoImg from '../assets/logo.webp';
 
-export default function Header({ activeTab, setActiveTab }) {
+export default function Header({ activeTab, goToPokemonList, goToTeamList }) {
   return (
     <header className="bg-blue-900 border-b border-blue-800 text-blue-50">
       <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-2.5 sm:py-3 flex items-center justify-between gap-2 sm:gap-4">
         {/* Logo */}
         <button 
           type="button"
-          onClick={() => setActiveTab('PokemonList')}
+          onClick={goToPokemonList}
           className="flex items-center gap-2 cursor-pointer focus:outline-hidden"
         >
           <img 
             src={logoImg} 
-            alt="PokiWiki Logo" 
+            alt="PokeWiki Logo" 
             className="h-7 sm:h-9 w-auto object-contain"
           />
         </button>
 
         <nav className="flex items-center gap-1 sm:gap-2 bg-blue-950/50 p-0.5 sm:p-1 rounded-lg sm:rounded-xl border border-blue-800/60">
-          {/* Pokemons Button */}
+          {/* Pokémon Button */}
           <button
             type="button"
-            onClick={() => setActiveTab('PokemonList')}
+            onClick={goToPokemonList}
             className={`
               flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-4 py-1 sm:py-1.5 rounded-md sm:rounded-lg text-xs sm:text-sm font-medium transition-all duration-150 cursor-pointer
               ${
@@ -44,13 +44,13 @@ export default function Header({ activeTab, setActiveTab }) {
               <path d="M2 12h20" />
               <circle cx="12" cy="12" r="3" fill={activeTab === 'PokemonList' ? 'currentColor' : 'none'} />
             </svg>
-            <span>Pokemons</span>
+            <span>Pokémon</span>
           </button>
 
           {/* My Team Button */}
           <button
             type="button"
-            onClick={() => setActiveTab('MyTeamList')}
+            onClick={goToTeamList}
             className={`
               flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-4 py-1 sm:py-1.5 rounded-md sm:rounded-lg text-xs sm:text-sm font-medium transition-all duration-150 cursor-pointer
               ${

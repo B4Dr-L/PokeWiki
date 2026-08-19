@@ -41,7 +41,7 @@ export default function TeamPokemonCard({
 
         {/* Image Container */}
         <div
-          onClick={() => selectPokemon?.(pokemon.id)}
+          onClick={() => selectPokemon(pokemon)}
           className="bg-slate-50 rounded-lg p-2 flex items-center justify-center border border-slate-100 hover:shadow-md hover:border-slate-300 transition-all duration-150 cursor-pointer"
         >
           <img
